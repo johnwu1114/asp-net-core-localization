@@ -10,7 +10,25 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Localization.Routing" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Controllers\HomeController.en-GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace></CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\HomeController.zh-TW.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace></CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Index.en-GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Index.zh-TW.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
