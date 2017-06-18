@@ -1,8 +1,11 @@
 ﻿@using System.Globalization
 @using Microsoft.AspNetCore.Mvc.Localization
+@using MyWebsite.Models
 
+@model SampleModel
 @inject IViewLocalizer Localizer
 
 CurrentCulture: @CultureInfo.CurrentCulture.Name <br />
 CurrentUICulture: @CultureInfo.CurrentUICulture.Name <br />
-Hello: @Localizer["Hello"]<br />
+@Localizer["Hello"]<br />
+@Html.DisplayNameFor(m => m.Content)<br />
