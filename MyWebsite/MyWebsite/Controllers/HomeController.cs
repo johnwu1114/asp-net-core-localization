@@ -12,9 +12,8 @@ namespace MyWebsite.Controllers
         private readonly IStringLocalizer _localizer;
         private readonly IStringLocalizer _sharedLocalizer;
 
-        public HomeController(IStringLocalizer<HomeController> localizer
-            , IStringLocalizer<SharedResource> sharedLocalizer
-            )
+        public HomeController(IStringLocalizer<HomeController> localizer,
+            IStringLocalizer<SharedResource> sharedLocalizer)
         {
             _localizer = localizer;
             _sharedLocalizer = sharedLocalizer;

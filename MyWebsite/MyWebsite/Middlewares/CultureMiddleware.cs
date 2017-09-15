@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Localization.Routing;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Localization.Routing;
 
 namespace MyWebsite.Middlewares
 {
