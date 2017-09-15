@@ -2,10 +2,13 @@
 @using Microsoft.AspNetCore.Mvc.Localization
 @using MyWebsite.Models
 
+
 @model SampleModel
-@inject IViewLocalizer Localizer
+@inject IViewLocalizer localizer
+@inject IHtmlLocalizer<MyWebsite.SharedResource> sharedLocalizer
 
 CurrentCulture: @CultureInfo.CurrentCulture.Name <br />
 CurrentUICulture: @CultureInfo.CurrentUICulture.Name <br />
-@Localizer["Hello"]<br />
+Resources\Views\Home\Index: @localizer["Hello"]<br />
+Resources\SharedResource: @sharedLocalizer["Hello"]<br />
 @Html.DisplayNameFor(m => m.Content)<br />

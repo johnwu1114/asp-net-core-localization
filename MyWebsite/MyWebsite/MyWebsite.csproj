@@ -29,6 +29,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <CustomToolNamespace></CustomToolNamespace>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\SharedResource.en-GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\SharedResource.zh-TW.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Home\Index.en-GB.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>

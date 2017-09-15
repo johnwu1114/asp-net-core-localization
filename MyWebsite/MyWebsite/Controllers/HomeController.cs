@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Globalization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using MyWebsite.Middlewares;
 using MyWebsite.Models;
-using System.Globalization;
 
 namespace MyWebsite.Controllers
 {
@@ -10,10 +10,14 @@ namespace MyWebsite.Controllers
     public class HomeController : Controller
     {
         private readonly IStringLocalizer _localizer;
+        private readonly IStringLocalizer _sharedLocalizer;
 
-        public HomeController(IStringLocalizer<HomeController> localizer)
+        public HomeController(IStringLocalizer<HomeController> localizer
+            , IStringLocalizer<SharedResource> sharedLocalizer
+            )
         {
             _localizer = localizer;
+            _sharedLocalizer = sharedLocalizer;
         }
 
         public IActionResult Index()
@@ -21,11 +25,12 @@ namespace MyWebsite.Controllers
             return View(model: new SampleModel());
         }
 
-        public IActionResult Content()
+        public string Content()
         {
-            return Content($"CurrentCulture: {CultureInfo.CurrentCulture.Name}\r\n"
-                         + $"CurrentUICulture: {CultureInfo.CurrentUICulture.Name}\r\n"
-                         + $"{_localizer["Hello"]}");
+            return $"CurrentCulture: {CultureInfo.CurrentCulture.Name}\r\n"
+                 + $"CurrentUICulture: {CultureInfo.CurrentUICulture.Name}\r\n"
+                 + $"Resources\\Controllers\\HomeController: {_localizer["Hello"]}\r\n"
+                 + $"Resources\\SharedResource: {_sharedLocalizer["Hello"]}";
         }
     }
 }
